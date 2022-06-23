@@ -1,3 +1,4 @@
+import pickle
 from collections import Counter
 
 
@@ -110,6 +111,20 @@ class HuffmanEncoder():
         print('---------------------')
         for (char, frequency) in self.frequencies:
             print(' %-4r |%12s' % (char, self.tree[char]))
+    
+
+    def save_tree(self, filename = 'tree'):
+        """ Save Tree as pickel """
+
+        with open(f'{filename}.pkl', 'wb') as file:
+            pickle.dump(self.tree, file)
+    
+
+    def save_self(self, filename = 'self'):
+        """ Save Tree as pickel """
+
+        with open(f'{filename}.pkl', 'wb') as file:
+            pickle.dump(self.tree, file)
 
 
 
